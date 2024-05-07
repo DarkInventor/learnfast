@@ -4,7 +4,7 @@ import { OpenAIStream, StreamingTextResponse } from 'ai'
 // Create an OpenAI API client
 const client = new OpenAIClient(
   'https://veryopenai.openai.azure.com/',
-  new AzureKeyCredential(process.env.NEXT_PUBLIC_AZURE_OPENAI_API_KEY!)
+  new AzureKeyCredential(process.env.AZURE_OPENAI_API_KEY!)
 )
 
 export async function POST(req: Request) {
