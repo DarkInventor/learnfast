@@ -4,7 +4,7 @@
 import React, { useEffect } from 'react';
 import { useChat } from 'ai/react';
 
-export const maxDuration = 300;
+// export const maxDuration = 300;
 
 export default function Home() {
   const { messages, input, handleInputChange, handleSubmit, stop, isLoading } = useChat();
