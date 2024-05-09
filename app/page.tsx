@@ -1,17 +1,32 @@
 'use client'
 
 // Final Version
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useChat } from 'ai/react';
+import { start } from 'repl';
 
 // export const maxDuration = 300;
 
 export default function Home() {
   const { messages, input, handleInputChange, handleSubmit, stop, isLoading } = useChat();
 
+  const [showWelcomeMessage, setShowWelcomeMessage] = useState(false);
+
   useEffect(() => {
-    // Initialize the chat with a welcome message
+    // Simply toggle the state to show the welcome message without altering the useChat messages.
+    setShowWelcomeMessage(true);
+
+    // You can also set a timeout to automatically hide this message after a few seconds if desired.
+    // setTimeout(() => setShowWelcomeMessage(false), 5000);
   }, []);
+
+  // useEffect(() => {
+  //   if(messages.length === 0) {
+  //     setMessages([
+  //       { id: 'welcome-msg', content: "Hi, how can I help you?", role: 'bot' },
+  //     ]);
+  //   }
+  // }, [setMessages, messages.length]);
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-gray-100">
@@ -20,6 +35,11 @@ export default function Home() {
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">Chatbot</h1>
         </div>
         <div className="flex flex-col p-6 space-y-4 overflow-y-auto h-screen md:h-auto md:max-h-96">
+        {showWelcomeMessage && (
+            <div className="max-w-2xl px-4 py-2 rounded-2xl shadow bg-gray-200 mr-auto">
+              <span>Hii</span>
+            </div>
+          )}
           {messages.map((m) => (
             <div key={m.id} className={`max-w-2xl px-4 py-2 rounded-2xl shadow ${m.role === 'user' ? 'bg-blue-500 text-white ml-auto' : 'bg-gray-200 mr-auto'}`}>
               <span>{m.content}</span>
