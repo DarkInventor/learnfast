@@ -11,6 +11,9 @@ dependencies:
   ai:
     specifier: ^3.1.1
     version: 3.1.1(react@18.3.1)(solid-js@1.8.17)(svelte@4.2.15)(vue@3.4.27)(zod@3.23.6)
+  heroicons-react:
+    specifier: ^1.4.1
+    version: 1.4.1(react@18.3.1)
   next:
     specifier: 14.2.3
     version: 14.2.3(react-dom@18.3.1)(react@18.3.1)
@@ -1821,6 +1824,15 @@ packages:
     dependencies:
       function-bind: 1.1.2
     dev: true
+
+  /heroicons-react@1.4.1(react@18.3.1):
+    resolution: {integrity: sha512-lFB8N44eeju73p5IjaeRrRejXsWWjsmeLK1LQrXGI5UnV9qvkzk2VZoMx5HKLnp1xJI4i9pFh/g2uRc7M1jrjQ==}
+    deprecated: 'Official Heroicons V1 released. Please use the following for future projects: https://www.npmjs.com/package/@heroicons/react'
+    peerDependencies:
+      react: '>=16.13'
+    dependencies:
+      react: 18.3.1
+    dev: false
 
   /http-proxy-agent@7.0.2:
     resolution: {integrity: sha512-T1gkAiYYDWYx3V5Bmyu7HcfcvL7mUrTWiM6yOfa3PIphViJ/gFPbvidQ+veqSOHci/PxBcDabeUNCzpOODJZig==}
