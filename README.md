@@ -1,11 +1,5 @@
 # Welcome to the Future of Conversational AI
 
-import { ChatIcon } from 'heroicons-react';
-
----
-
-![Next.js](/images/nextjs-logo.png) ![Tailwind CSS](/images/tailwind-logo.png) ![Vercel](/images/vercel-logo.png) ![Azure](/images/azure-logo.png)
-
 ## Building an AI-Powered Chatbot with Next.js and GPT-4 Turbo
 
 In the era of advanced AI technologies, crafting immersive conversational experiences is paramount. Step into the world of tomorrow with my latest creation – an AI-powered chatbot built with Next.js and GPT-4 Turbo.
