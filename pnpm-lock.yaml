@@ -5,15 +5,15 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@ai-sdk/openai':
+    specifier: ^0.0.11
+    version: 0.0.11(zod@3.23.8)
   '@azure/openai':
     specifier: 1.0.0-beta.12
     version: 1.0.0-beta.12
-  '@nanostores/react':
-    specifier: github:ai/react
-    version: git@github.com+ai/react/90876cd47f5b94090793f06dfa027b5d1879ff01(nanostores@0.10.3)(react@18.3.1)
   ai:
-    specifier: ^3.1.5
-    version: 3.1.5(react@18.3.1)(solid-js@1.8.17)(svelte@4.2.16)(vue@3.4.27)(zod@3.23.8)
+    specifier: ^3.1.6
+    version: 3.1.6(react@18.3.1)(solid-js@1.8.17)(svelte@4.2.16)(vue@3.4.27)(zod@3.23.8)
   cn:
     specifier: ^0.1.1
     version: 0.1.1
@@ -38,6 +38,9 @@ dependencies:
   react-dom:
     specifier: ^18
     version: 18.3.1(react@18.3.1)
+  zod:
+    specifier: ^3.23.8
+    version: 3.23.8
 
 devDependencies:
   '@types/node':
@@ -70,8 +73,8 @@ devDependencies:
 
 packages:
 
-  /@ai-sdk/provider-utils@0.0.6(zod@3.23.8):
-    resolution: {integrity: sha512-SxOZgSxnaVlW04/SjfMoAD45kWOWTWx0QcZrHaQnePooLhyk5AqQpgauPijL803uoJPCKfzd0UBv1gSKvWiU0A==}
+  /@ai-sdk/openai@0.0.11(zod@3.23.8):
+    resolution: {integrity: sha512-LZJN1wpjwx6cMwpZIdIBTONjvRl9NPp1NC99NAZ6f5t+y4BfRVkQC4YW4ISODyybmIDHOK7OyZ0NtDU4UWUBfQ==}
     engines: {node: '>=18'}
     peerDependencies:
       zod: ^3.0.0
@@ -79,15 +82,29 @@ packages:
       zod:
         optional: true
     dependencies:
-      '@ai-sdk/provider': 0.0.3
+      '@ai-sdk/provider': 0.0.4
+      '@ai-sdk/provider-utils': 0.0.7(zod@3.23.8)
+      zod: 3.23.8
+    dev: false
+
+  /@ai-sdk/provider-utils@0.0.7(zod@3.23.8):
+    resolution: {integrity: sha512-zs/H1T2U4NCdiPBtBKI/FXQirAyrwgwI+qQ85Y8TZLAYY59+I2yVUlSb3WG7Zp+OmaXBlppUGAlEpUIDBrErXw==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      zod: ^3.0.0
+    peerDependenciesMeta:
+      zod:
+        optional: true
+    dependencies:
+      '@ai-sdk/provider': 0.0.4
       eventsource-parser: 1.1.2
       nanoid: 3.3.6
       secure-json-parse: 2.7.0
       zod: 3.23.8
     dev: false
 
-  /@ai-sdk/provider@0.0.3:
-    resolution: {integrity: sha512-0B8P6VZpJ6F9yS9BpmJBYSqIaIfeRtL5tD5SP+qgR8y0pPwalIbRMUFiLz9YUT6g70MJsCLpm/2/fX3cfAYCJw==}
+  /@ai-sdk/provider@0.0.4:
+    resolution: {integrity: sha512-MlKP7WsPkHsxQN5tbWrB1C9XjC3u0Pml5EH8R2hs/JEFbrCAJBprD24DnUErYh3RgFIjkaVCeAMCM+N/psEPvw==}
     engines: {node: '>=18'}
     dependencies:
       json-schema: 0.4.0
@@ -656,8 +673,8 @@ packages:
       - supports-color
     dev: false
 
-  /ai@3.1.5(react@18.3.1)(solid-js@1.8.17)(svelte@4.2.16)(vue@3.4.27)(zod@3.23.8):
-    resolution: {integrity: sha512-uE8EfcigIoep4NCqIOWsNUP/alyZ93XtsDsLjiop51y4lEtgJg0GzpbBRfYKaEK1O74HiQ2CmaeOOBlNVBBiIQ==}
+  /ai@3.1.6(react@18.3.1)(solid-js@1.8.17)(svelte@4.2.16)(vue@3.4.27)(zod@3.23.8):
+    resolution: {integrity: sha512-dHKuccKdgLx/YohrMg8Adb9vhQ61OPb0xb8Hc6Xux6dWHTUB8rO5QLuch7PnpmtDH5/3aq2a4QjzLdx5r/Brow==}
     engines: {node: '>=18'}
     peerDependencies:
       openai: ^4.42.0
@@ -680,8 +697,8 @@ packages:
       zod:
         optional: true
     dependencies:
-      '@ai-sdk/provider': 0.0.3
-      '@ai-sdk/provider-utils': 0.0.6(zod@3.23.8)
+      '@ai-sdk/provider': 0.0.4
+      '@ai-sdk/provider-utils': 0.0.7(zod@3.23.8)
       eventsource-parser: 1.1.2
       json-schema: 0.4.0
       jsondiffpatch: 0.6.0
@@ -2493,11 +2510,6 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
-  /nanostores@0.10.3:
-    resolution: {integrity: sha512-Nii8O1XqmawqSCf9o2aWqVxhKRN01+iue9/VEd1TiJCr9VT5XxgPFbF1Edl1XN6pwJcZRsl8Ki+z01yb/T/C2g==}
-    engines: {node: ^18.0.0 || >=20.0.0}
-    dev: false
-
   /natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
     dev: true
@@ -3608,18 +3620,4 @@ packages:
 
   /zod@3.23.8:
     resolution: {integrity: sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==}
-    dev: false
-
-  git@github.com+ai/react/90876cd47f5b94090793f06dfa027b5d1879ff01(nanostores@0.10.3)(react@18.3.1):
-    resolution: {commit: 90876cd47f5b94090793f06dfa027b5d1879ff01, repo: git@github.com:ai/react.git, type: git}
-    id: git@github.com+ai/react/90876cd47f5b94090793f06dfa027b5d1879ff01
-    name: '@nanostores/react'
-    version: 0.7.2
-    engines: {node: ^18.0.0 || >=20.0.0}
-    peerDependencies:
-      nanostores: ^0.9.0 || ^0.10.0
-      react: '>=18.0.0'
-    dependencies:
-      nanostores: 0.10.3
-      react: 18.3.1
     dev: false
