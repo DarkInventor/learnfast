@@ -56,14 +56,14 @@ export default function Home() {
       <Nav />
       <Hero />
 
-      <div className="flex lg:flex-col items-center">
-        <div className="w-full max-w-4xl lg:max-w-6xl shadow-2xl rounded-lg bg-white">
+      <div className="flex flex-col items-center w-full px-4">
+        <div className="w-full max-w-4xl lg:max-w-6xl sm:max-w-2xl md:max-w-2xl shadow-2xl rounded-lg bg-white">
           <div className="flex items-center justify-between p-6 bg-gradient-to-r from-blue-500 to-purple-500 rounded-t-lg shadow">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">
+            <h1 className="text-xl md:text-2xl lg:text-4xl font-bold text-white">
               Chatbot
             </h1>
           </div>
-          <div className="flex flex-col p-6 space-y-4 overflow-y-auto md:h-auto md:max-h-96 h-96 text-black">
+          <div className="flex flex-col p-6 space-y-4 overflow-y-auto h-96 md:h-auto md:max-h-96 text-black">
             {showWelcomeMessage && (
               <div className="max-w-2xl px-4 py-2 rounded-2xl shadow bg-gray-200 mr-auto text-black">
                 <span>Hii</span>
@@ -72,10 +72,10 @@ export default function Home() {
             {messages.map((m) => (
               <div
                 key={m.id}
-                className={`max-w-2xl px-4 py-2 rounded-2xl shadow ${
+                className={`max-w-full px-4 py-2 rounded-2xl shadow ${
                   m.role === "user"
-                    ? "bg-blue-500 text-white ml-auto"
-                    : "bg-gray-200 mr-auto"
+                    ? "bg-blue-500 text-white self-end"
+                    : "bg-gray-200 self-start"
                 }`}
               >
                 <span>{m.content}</span>
@@ -84,17 +84,17 @@ export default function Home() {
           </div>
           <form
             onSubmit={handleSubmit}
-            className="flex p-6 border-t items-center bg-gray-50 rounded-b-lg flex-wrap"
+            className="flex p-6 border-t items-center bg-gray-50 rounded-b-lg w-full flex-wrap"
           >
             <input
-              className="flex-1 p-2 mr-4 text-gray-700 border border-gray-300 rounded-2xl shadow-sm focus:ring-blue-500 focus:border-blue-500 w:full md:w-auto bg-white"
+              className="flex-1 p-2 mr-4 text-gray-700 border border-gray-300 rounded-2xl shadow-sm focus:ring-blue-500 focus:border-blue-500 w-full md:w-auto bg-white"
               value={input}
               placeholder="Type your message..."
               onChange={handleInputChange}
             />
             <button
               type="submit"
-              className="px-6 py-2 text-white bg-blue-500 rounded-2xl shadow-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 mt-0 lg:mt-0 md:mt-0"
+              className="px-6 py-2 text-white bg-blue-500 rounded-2xl shadow-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 mt-2 w-full md:w-auto md:mt-0"
             >
               Send
             </button>
@@ -102,7 +102,7 @@ export default function Home() {
               <button
                 type="button"
                 onClick={stop}
-                className="ml-2 text-blue-500 border border-blue-500 hover:bg-blue-500 hover:text-white rounded-2xl px-6 py-2 transition-colors duration-150 mt-4 lg:mt-0 md:mt-0"
+                className="ml-2 text-blue-500 border border-blue-500 hover:bg-blue-500 hover:text-white rounded-2xl px-6 py-2 transition-colors duration-150 mt-2 w-full md:w-auto md:mt-0"
               >
                 Stop
               </button>
