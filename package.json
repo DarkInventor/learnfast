@@ -11,7 +11,7 @@
   "dependencies": {
     "@azure/openai": "1.0.0-beta.12",
     "@nanostores/react": "github:ai/react",
-    "ai": "^3.1.1",
+    "ai": "^3.1.5",
     "cn": "^0.1.1",
     "framer-motion": "^11.1.9",
     "google": "link:next/font/google",

@@ -12,7 +12,7 @@ dependencies:
     specifier: github:ai/react
     version: git@github.com+ai/react/90876cd47f5b94090793f06dfa027b5d1879ff01(nanostores@0.10.3)(react@18.3.1)
   ai:
-    specifier: ^3.1.1
+    specifier: ^3.1.5
     version: 3.1.5(react@18.3.1)(solid-js@1.8.17)(svelte@4.2.16)(vue@3.4.27)(zod@3.23.8)
   cn:
     specifier: ^0.1.1
